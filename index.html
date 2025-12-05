@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viver.</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viver VR</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- PARTICLE BACKGROUND -->
+  <canvas id="bg-canvas"></canvas>
+
   <!-- SPLASH SCREEN -->
-  <div id="splash">
-    <img src="New Project (34).png" alt="Logo" class="splash-logo">
+  <div id="splash-screen">
+    <img src="New Project (34).png" class="splash-logo" alt="Logo">
   </div>
 
-  <!-- NAVIGATION BAR -->
-  <header>
+  <!-- NAVIGATION -->
+  <header class="navbar">
     <div class="nav-left">
       <img src="New Project (34).png" class="nav-logo" alt="Logo">
       <span class="nav-title">Viver VR</span>
     </div>
 
-    <nav>
-      <a href="#">Main</a>
+    <nav class="nav-tabs">
+      <a href="#home">Main</a>
       <a href="#games">Our VR Games</a>
       <a href="#about">About</a>
     </nav>
   </header>
 
-  <!-- BACKGROUND ORBS -->
+  <!-- ORB BACKGROUND -->
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Welcome to Viver Studio</h1>
-    <p>
-      We create immersive VR games with smooth design, polished visuals, and realistic experiences.
-    </p>
-    <button class="hero-btn">Explore Our Games</button>
-  </section>
+  <!-- MAIN CONTENT WRAPPER -->
+  <main id="main-screen">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <h1>Welcome to Viver VR</h1>
+      <p>We create immersive VR games with smooth visuals, polished design and realistic experiences.</p>
+      <button class="hero-btn">Explore Our Games</button>
+    </section>
+
+    <!-- GAMES SECTION -->
+    <section id="games" class="section">
+      <h2>Our VR Games</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>Viver VR is a creative studio dedicated to building high-quality VR experiences.</p>
+    </section>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
