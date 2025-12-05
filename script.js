@@ -1,44 +1,42 @@
-// Splash screen fade
-window.addEventListener('load', () => {
-  const splash = document.getElementById('splash-screen');
-  const main = document.getElementById('main-screen');
+// Splash fade-out + start background animation
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash-screen");
+  const main = document.getElementById("main-screen");
 
   setTimeout(() => {
-    splash.style.transition = 'opacity 1s';
     splash.style.opacity = 0;
-
     setTimeout(() => {
-      splash.style.display = 'none';
-      main.style.display = 'block';
+      splash.style.display = "none";
+      main.style.display = "block";
       startBackground();
     }, 1000);
   }, 2500);
 });
 
-// Smooth scroll for navbar links
-document.querySelectorAll('.nav-tabs a').forEach(a => {
-  a.addEventListener('click', e => {
+// Smooth scrolling for navbar
+document.querySelectorAll(".nav-tabs a").forEach(link => {
+  link.addEventListener("click", e => {
     e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
+    const target = document.querySelector(link.getAttribute("href"));
     if(target){
       window.scrollTo({
-        top: target.offsetTop - 70,
-        behavior: 'smooth'
+        top: target.offsetTop - 100,
+        behavior: "smooth"
       });
     }
   });
 });
 
-
-// Dark grey-black particle background
+// PARTICLE BACKGROUND  
 function startBackground() {
-  const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
+  const c = document.getElementById("bg-canvas");
+  const ctx = c.getContext("2d");
+
+  let width = c.width = window.innerWidth;
+  let height = c.height = window.innerHeight;
 
   const particles = [];
-  const count = 100;
+  const count = 90;
 
   class Particle {
     constructor() {
@@ -50,35 +48,37 @@ function startBackground() {
       this.size = Math.random() * 2 + 1;
       this.speedX = (Math.random() - 0.5) * 0.3;
       this.speedY = (Math.random() - 0.5) * 0.3;
-      this.opacity = Math.random() * 0.3 + 0.1;
+      this.opacity = Math.random() * 0.25 + 0.1;
     }
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
-      if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+      if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) 
+        this.reset();
     }
     draw() {
       ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
       ctx.fill();
     }
   }
 
-  for (let i=0;i<count;i++) particles.push(new Particle());
+  for (let i = 0; i < count; i++) particles.push(new Particle());
 
   function animate() {
-    ctx.fillStyle = '#111'; // dark grey-black background
+    ctx.fillStyle = "#0b0b0c";
     ctx.fillRect(0,0,width,height);
 
     particles.forEach(p => { p.update(); p.draw(); });
+
     requestAnimationFrame(animate);
   }
 
   animate();
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+  window.addEventListener("resize", () => {
+    width = c.width = window.innerWidth;
+    height = c.height = window.innerHeight;
   });
 }
