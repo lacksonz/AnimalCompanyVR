@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    const splashDuration = 2500; // Duration of the animation in ms
+    const splashDuration = 2500; // Match animation duration
 
     setTimeout(() => {
         const splash = document.getElementById('splash-screen');
