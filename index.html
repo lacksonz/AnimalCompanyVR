@@ -8,38 +8,44 @@
 </head>
 <body>
 
-  <!-- Splash Screen -->
-  <div id="splash-screen">
-    <img src="New Project (34).png" alt="Game Logo" class="logo">
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="New Project (34).png" alt="Logo" class="nav-logo">
+    <ul class="nav-tabs">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#games">Our VR Games</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Main Screen -->
-  <div id="main-screen">
-    <!-- Canvas background -->
-    <canvas id="bg-canvas"></canvas>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-      <img src="New Project (34).png" alt="Logo" class="nav-logo">
-      <ul class="nav-tabs">
-        <li><a href="#main">Main</a></li>
-        <li><a href="#vrgames">Our VR Games</a></li>
-      </ul>
-    </nav>
-
-    <!-- Main content -->
-    <div class="content">
-      <section id="main">
-        <h1>Welcome to Viver.</h1>
-        <p>Explore our VR games and experiences.</p>
-      </section>
-
-      <section id="vrgames">
-        <h2>Our VR Games</h2>
-        <p>Coming soon…</p>
-      </section>
+  <!-- Hero Section -->
+  <header id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="New Project (34).png" alt="Logo" class="hero-logo">
+      <h1>Immersive VR Experiences</h1>
+      <p>Step into worlds beyond imagination</p>
     </div>
-  </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>Viver Game is a VR studio creating immersive and interactive virtual reality experiences.</p>
+    </section>
+
+    <section id="games" class="section">
+      <h2>Our VR Games</h2>
+      <p>Discover our portfolio of VR games designed for ultimate immersion.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Get in touch for collaborations, support, or inquiries.</p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
