@@ -1,109 +1,125 @@
-/* Basic reset */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body, html {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Splash Screen */
 #splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000; /* Black during splash */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
-
 .logo {
-    width: 300px; /* Initial size */
-    opacity: 0;
-    transform: scale(0.5);
-    animation: zoomFade 2.5s forwards;
+  width: 300px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: zoomFade 2.5s forwards;
 }
-
-/* Splash animation: zoom bigger */
 @keyframes zoomFade {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.5); /* Bigger zoom */
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.8);
-    }
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.6); }
+  100% { opacity: 0; transform: scale(2); }
 }
 
-/* Main screen */
+/* Main Screen */
 #main-screen {
-    display: none;
-    width: 100%;
-    height: 100%;
-    background: #0a2f6b; /* Blue background */
-    color: #fff;
-    flex-direction: column;
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #0a2f6b, #0d3b94, #1451c0);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+  z-index: -1;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    align-items: center;
-    background: #0d3b94;
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(13, 59, 148, 0.9);
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 10;
 }
-
 .nav-logo {
-    height: 50px;
-    margin-right: 20px;
+  height: 50px;
+  margin-right: 20px;
+  transition: transform 0.5s;
 }
-
+.nav-logo:hover {
+  transform: scale(1.1);
+}
 .nav-tabs {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
-
 .nav-tabs li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.3s;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
-
 .nav-tabs li a:hover {
-    background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.2);
 }
 
 /* Content */
 .content {
-    text-align: center;
-    padding: 50px;
+  text-align: center;
+  padding: 120px 30px 30px 30px; /* Account for navbar height */
 }
-
 .content h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: #a6c8ff;
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: #a6c8ff;
+  animation: fadeInUp 1.5s ease forwards;
+  opacity: 0;
 }
-
 .content p {
-    font-size: 1.5em;
-    color: #d0e1ff;
+  font-size: 1.5em;
+  color: #d0e1ff;
+  animation: fadeInUp 2s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
