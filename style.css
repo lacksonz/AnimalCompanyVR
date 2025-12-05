@@ -1,167 +1,109 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    overflow-x: hidden;
+    background: #111;
+    color: white;
 }
 
-body {
-  background: #0a0a0b;
-  font-family: Arial, sans-serif;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* PARTICLE CANVAS */
-#bg-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-}
-
-/* SPLASH SCREEN */
+/* Splash Screen */
 #splash-screen {
-  position: fixed;
-  inset: 0;
-  background: #0e0e0f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  opacity: 1;
-  transition: opacity 1s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-.splash-logo {
-  width: 260px;
-  opacity: 0;
-  animation: splashFade 2.4s ease forwards;
+#splash-logo {
+    width: 260px;
+    opacity: 1;
+    animation: splashZoom 2.5s ease-out forwards;
 }
 
-@keyframes splashFade {
-  0% { opacity: 0; transform: scale(0.8); }
-  60% { opacity: 1; transform: scale(1.1); }
-  100% { opacity: 1; transform: scale(1); }
+@keyframes splashZoom {
+    0% { transform: scale(0.7); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: scale(1.4); opacity: 1; }
 }
 
-/* NAVIGATION */
+/* Navbar */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 60px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
 }
 
 .nav-logo {
-  height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.nav-title {
-  font-size: 22px;
-  font-weight: 600;
+.nav-logo img {
+    width: 40px;
+    border-radius: 6px;
 }
 
-.nav-tabs a {
-  margin-left: 35px;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: .25s;
+.nav-logo span {
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.nav-tabs a:hover {
-  color: #4EA3FF;
+.nav-tabs {
+    display: flex;
+    gap: 30px;
+    list-style: none;
 }
 
-/* ORBS */
-.orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: -1;
+.nav-tabs li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
 }
 
-.orb1 {
-  width: 260px;
-  height: 260px;
-  background: #4EA3FF33;
-  top: 20%;
-  left: 70%;
-  animation: float 14s infinite ease-in-out;
+.nav-tabs li a:hover {
+    color: #5abaff;
 }
 
-.orb2 {
-  width: 330px;
-  height: 330px;
-  background: #4EA3FF22;
-  top: 65%;
-  left: 10%;
-  animation: float 18s infinite ease-in-out;
-}
-
-@keyframes float {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(40px, -60px); }
-  100% { transform: translate(0,0); }
-}
-
-/* HERO SECTION */
-.hero {
-  min-height: 100vh;
-  padding-top: 180px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 70px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  opacity: 0.8;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 22px;
-}
-
-.hero-btn {
-  padding: 15px 35px;
-  font-size: 20px;
-  border-radius: 8px;
-  background: #4EA3FF;
-  border: none;
-  cursor: pointer;
-  color: black;
-  transition: .25s;
-}
-
-.hero-btn:hover {
-  background: #73B8FF;
-  transform: translateY(-3px);
-}
-
-/* SECTIONS */
+/* Sections */
 .section {
-  padding: 150px 40px;
-  text-align: center;
+    padding: 180px 20px 120px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
-.section h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    color: #bbb;
+}
+
+/* Canvas background */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
