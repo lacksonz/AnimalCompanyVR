@@ -1,67 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" data-wf-site="68c5a54e4bcedd5575bdd7b5">
+<html lang="en" data-wf-site="68c5a54e4bcedd5575bdd7b5" data-wf-page="68c5a54f4bcedd5575bdd7bb">
 <head>
   <meta charset="utf-8">
-  <title>Animal Company VR — Free Multiplayer Adventure Game on Meta Quest</title>
-  <meta name="description" content="Dive into spooky worlds, fight epic monsters, and squad up with friends in this free-to-play Virtual Reality game. With weekly updates, new maps, and seasonal events, there’s always fresh chaos to play and share.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="Webflow">
-  
+  <title>Animal Company VR — Free Multiplayer Adventure Game on Meta Quest</title>
+  <meta name="description" content="Dive into spooky worlds, fight epic monsters, and squad up with friends in this free-to-play Virtual Reality game.">
+
   <!-- Webflow CSS -->
-  <link rel="stylesheet" href="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/css/animal-company-vr-on-meta-quest.webflow.shared.cc6201b09.min.css" type="text/css">
-  
+  <link href="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/css/animal-company-vr-on-meta-quest.webflow.shared.cc6201b09.min.css" rel="stylesheet" type="text/css">
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>
     WebFont.load({
-      google: {
-        families: ["Kode Mono:regular,500,600,700","Inter:regular,500,600,700"]
-      }
+      google: { families: ["Kode Mono:regular,500,600,700","Inter:regular,500,600,700"] }
     });
   </script>
-  
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68d4e556f311b084a6ebbd94_favicon.png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68d4e5598b0e7d4be430895f_webclip.png">
-
-  <!-- Webflow JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-  <script src="https://assets.website-files.com/68c5a54e4bcedd5575bdd7b5/js/webflow.js" defer></script>
-
-  <!-- Optional: Finsweet Attributes -->
-  <script async type="module" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js" fs-list=""></script>
 
   <style>
-    body, html { overflow-x: hidden; }
-    body { overflow-y: hidden; }
-    .w-nav-link.w--current { background-color: var(--white); color: var(--black); }
-    .faq-text p:first-child { padding-top: 8px; }
-    #copyright-year { position: relative; }
-    #copyright-year:before {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background-image: url('https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68c924f38e5cd5835446acbc_copyright.svg');
-      left: -14px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    @media(min-width: 991px){
-      .triangle-nav-menu { display: none !important; }
-    }
+    body, html { margin:0; padding:0; overflow-x:hidden; }
+    body { overflow-y:auto; }
+    .w-nav-link.w--current { background-color: #fff; color: #000; }
   </style>
 </head>
+
 <body class="body">
+  <!-- Navigation -->
+  <section class="nav-section w-nav">
+    <div class="container">
+      <a href="/" class="w-inline-block w--current">
+        <img src="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68c8a139ee875a9e3060d421_Logo.svg" alt="Animal Company logo">
+      </a>
+      <div class="nav-links">
+        <a href="/about" class="main-btn w-button">About</a>
+        <a href="https://shop.animalcompanyvr.com/" class="main-btn w-button" target="_blank">Shop</a>
+        <a href="https://support.animalcompanyvr.com/support/home" class="main-btn w-button" target="_blank">Support</a>
+        <a href="/games-fund" class="main-btn w-button">Games Fund</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- Webflow Body Content -->
-  <!-- Copy your entire <body> content here from your Webflow export -->
-  <!-- Everything from <section class="section nav-section"> ... to the end -->
-  <!-- Make sure all assets are referenced via absolute URLs as in your original export -->
+  <!-- Hero Video Section -->
+  <section class="hero-section">
+    <video autoplay loop muted playsinline style="width:100%; height:auto; object-fit:cover;">
+      <source src="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68d642ec05e70bc8626d0621_Animal%20Company%20Trailer%20-%20Animal%20Company%20%281080p%2C%20h264%29%20%281%29-transcode.mp4" type="video/mp4">
+      <source src="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68d642ec05e70bc8626d0621_Animal%20Company%20Trailer%20-%20Animal%20Company%20%281080p%2C%20h264%29%20%281%29-transcode.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Enter the chaotic world of Animal Company VR</h1>
+      <a href="https://www.meta.com/experiences/animal-company/7190422614401072/" class="main-btn w-button" target="_blank">Play Free</a>
+    </div>
+  </section>
 
+  <!-- Adventure Section -->
+  <section class="section adventure-container">
+    <div>
+      <h2>Adventure & Social Chaos</h2>
+      <p>Explore spooky worlds, survive epic monster battles, and team up with friends in this free multiplayer Virtual Reality game. Weekly updates bring new maps, challenges, and rewards.</p>
+      <a href="https://meta.com/experiences/7190422614401072" class="main-btn w-button" target="_blank">Play Free on Meta Quest</a>
+    </div>
+    <img src="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/68c8d6b01ec5219e06656504_T-mark.avif" alt="Violence Blood Mark" />
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>Is Animal Company safe for children?</h3>
+      <p>Rated ESRB Teen (13+), focusing on safe spooky adventures and social play. Features built-in moderation and private rooms.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Which VR headset should I buy?</h3>
+      <p>Available on Meta Quest 2, 3, 3S, and Pro.</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <section class="footer-section">
+    <p>&copy; <span id="copyright-year"></span> Animal Company</p>
+  </section>
+
+  <!-- Webflow JS for interactions -->
+  <script src="https://cdn.prod.website-files.com/68c5a54e4bcedd5575bdd7b5/js/webflow.js"></script>
+  <script>
+    // Update copyright year dynamically
+    document.getElementById('copyright-year').innerText = new Date().getFullYear();
+  </script>
 </body>
 </html>
